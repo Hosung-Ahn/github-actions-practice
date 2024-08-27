@@ -1,4 +1,0 @@
-name: gap
-version: '${version}'
-main: com.test.gap.Gap
-api-version: '1.20'
