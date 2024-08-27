@@ -1,6 +1,5 @@
 name: Java CI with Gradle
 
-# push 이벤트에서만 트리거되도록 설정
 on:
   push:
     branches: [ main ]
@@ -11,10 +10,10 @@ jobs:
 
     steps:
     - name: Check out repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v3  # 최신 버전으로 업그레이드 필요시 v4 확인
 
     - name: Set up JDK 17
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v3  # 최신 버전으로 업그레이드 필요시 v4 확인
       with:
         java-version: '17'
 
