@@ -1,5 +1,6 @@
 package com.example.gap;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -7,6 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class SampleTest {
     @Test
     void test() {
-        return;
+        Assertions.assertTrue(false);
     }
 }
