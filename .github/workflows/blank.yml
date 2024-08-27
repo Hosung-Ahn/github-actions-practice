@@ -15,22 +15,27 @@ jobs:
     - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
-        distribution: 'adopt'
+        distribution: 'temurin'  
         java-version: '17'
 
     - name: Cache Gradle packages
       uses: actions/cache@v3
       with:
         path: ~/.gradle/caches
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        key: ${{ runner.os }}-gradle-${{ hashFiles('gap/**/*.gradle*', 'gap/**/gradle-wrapper.properties') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
+
+    - name: Change directory to 'gap'
+      run: cd gap
 
     - name: Grant execute permission for gradlew
       run: chmod +x gap/gradlew
 
     - name: Build with Gradle
-      run: gap/gradlew build
+      run: ./gradlew build
+      working-directory: gap
 
     - name: Run tests
-      run: gap/gradlew test
+      run: ./gradlew test
+      working-directory: gap
