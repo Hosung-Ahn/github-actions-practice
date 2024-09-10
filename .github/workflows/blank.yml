@@ -25,10 +25,7 @@ jobs:
         key: ${{ runner.os }}-gradle-${{ hashFiles('gap/**/*.gradle*', 'gap/**/gradle-wrapper.properties') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
-
-    - name: Change directory to 'gap'
-      run: cd gap
-
+          
     - name: Grant execute permission for gradlew
       run: chmod +x gap/gradlew
 
